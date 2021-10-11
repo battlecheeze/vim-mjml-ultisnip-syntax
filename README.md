@@ -1,0 +1,1 @@
+# vim-mjml-ultisnip-syntax
