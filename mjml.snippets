@@ -1,0 +1,335 @@
+priority -50
+
+snippet mjml "MJML All"
+<mjml>
+	<mj-head>
+		$2
+	</mj-head>
+	<mj-body>
+		<mj-section>
+			<mj-column>
+				$1
+			</mj-column>
+		</mj-section>
+	</mj-body>
+</mjml>
+endsnippet
+
+snippet mjhead "mj-head contains head components, related to the document such as style and meta elements"
+<mj-head>
+	$1
+</mj-head>
+endsnippet
+
+snippet mjbody "MJML Body"
+<mj-body>
+	$1
+</mj-body>
+endsnippet
+
+snippet mjattributes "MJML Attributes" 
+<mj-attributes>
+	$1
+</mj-attributes>
+endsnippet
+
+snippet mjattributesfull "MJML Attributes: text, class and all"
+<mj-attributes>
+	<mj-text $1 />
+	<mj-class $2 />
+	<mj-all $3 />
+</mj-attributes>
+endsnippet
+
+snippet mjattributestext "MJML Text Attributes"
+<mj-attributes>
+	<mj-text $1 />
+</mj-attributes>
+endsnippet
+
+snippet mjattributesclass1 "MJML Class Attributes 1"
+<mj-attributes>
+	<mj-class name="$1" />
+</mj-attributes>
+endsnippet
+
+snippet mjclass "MJML Class: create a named group of MJML attributes you can apply to MJML components"
+<mj-class name="$1" />
+endsnippet
+
+snippet mjattributesall "MJML Attributes All: affects all MJML components via the one tag"
+<mj-attributes>
+	<mj-all font-family="$1" />
+</mj-attributes>
+endsnippet
+
+snippet mjbreakpoint "MJML breakpoint allows you to control on which breakpoint the layout should go desktop/mobile."
+<mj-breakpoint width="$1" />
+endsnippet
+
+snippet mjfont "MJML font imports fonts"
+<mj-font name="$1" href="$2" />	
+endsnippet
+
+snippet mjhtmlattributes "MJML HTML Attributes  allows you to add custom attributes on any html tag of the generated html, using css selectors. It's not needed for most email creations, but can be useful in some cases, i.e. editable templates."
+<mj-html-attributes>
+	<mj-selector path="$1">
+		<mj-html-attribute name="$2">$1</mj-html-attribute>
+	</mj-selector>
+</mjml-html-attributes>
+endsnippet
+
+snippet mjselector "MJML Selector for MJML HTML Attributes"
+<mj-selector path="$1">
+	$2
+</mj-selector>
+endsnippet
+
+snippet mjhtmlattribute "Inside mj-selector"
+<mj-html-attribute name="$2">
+	$1
+</mj-html-attribute>
+endsnippet
+
+snippet mj-preview "MJML Preview allows you to set the preview that will be displayed in the inbox of the recipient."
+<mj-preview>$1</mj-preview>
+endsnippet
+
+snippet mjstyle "MJML Style allows you to set CSS styles that will be applied to the HTML in your MJML document as well as the HTML outputted."
+<mj-style>
+	$1 {
+		$2
+	}
+</mj-style>
+endsnippet
+
+snippet mjstyleinline "MJML Style Inline"
+<mj-style inline="inline">
+	$1 {
+		$2
+	}
+</mj-style>
+endsnippet
+
+snippet mjtitle "Defines the document's title that browsers show in the title bar or a page's tab."
+<mj-title>$1</mj-title>
+endsnippet
+
+snippet mjaccordionhead "mj-accordion is an interactive MJML component to stack content in tabs, so the information is collapsed and only the titles are visible."
+<mj-accordion border="$1" padding="$2px" />
+endsnippet
+
+snippet mjaccordionelementhead "MJML Accordion Element" 
+<mj-accordion-element icon-wrapped-url="$1" icon-unwrapped-url="$2" icon-height="$3px" icon-width="$4px" />
+endsnippet
+
+snippet mjaccordiontitlehead "MJML Accordion Title"
+<mj-accordion-title font-family="$1" background-color="$2" color="$3" padding="$4px" font-size="$5px" />
+endsnippet
+
+snippet mjaccordiontexthead "MJML Accordion Text"
+<mj-accordion-text font-family="$1" background-color="$2" color="$3" padding="$4px" font-size="$5px" />
+endsnippet
+
+snippet mjaccordionattri "MJML Accordion Element, Title and Text"
+<mj-attributes>
+	<mj-accordion border="$1" padding="$1px" />
+	<mj-accordion-element icon-wrapped-url="$3" icon-unwrapped-url="$4" icon-height="$5px" icon-width="$6px" />
+	<mj-accordion-title font-family="$7" background-color="$8" color="$9" padding="$10px" font-size="$11px" />
+	<mj-accordion-text font-family="$12" background-color="$13" color="$14" padding="$15px" font-size="$16px" />
+</mj-attributes>
+endsnippet
+
+snippet mjaccordionfullhead "Without the MJML Attributes"
+<mj-accordion border="$1" padding="$1px" />
+<mj-accordion-element icon-wrapped-url="$3" icon-unwrapped-url="$4" icon-height="$5px" icon-width="$6px" />
+<mj-accordion-title font-family="$7" background-color="$8" color="$9" padding="$10px" font-size="$11px" />
+<mj-accordion-text font-family="$12" background-color="$13" color="$14" padding="$15px" font-size="$16px" />
+endsnippet
+
+snippet mjaccordionfullcol "Insert this in the mjml-column"
+<mj-accordion>
+	<mj-accordion-element>
+		<mj-accordion-title>$1</mj-accordion-title>
+		<mj-accordion-text>
+			$2
+		</mj-accordion-text>
+	</mj-accordion-element>
+</mj-accordion>
+endsnippet
+
+snippet mjaccordion "MJML Accordion inside of MJML Column"
+<mj-accordion>
+	$1
+</mj-accordion>
+endsnippet
+
+snippet mjaccordionelement "Creates an accordion title/text pair. An accordion can have any number of these pairs."
+<mj-accordion-element>
+	$1
+</mj-accordion-element>
+endsnippet
+
+snippet mjaccordionelementfull "Accordion Element with Title and Text"
+<mj-accordion-element>
+	<mj-accordion-title>$1</mj-accordion-title>
+	<mj-accordion-text>
+		$2
+	</mj-accordion-text>
+</mj-accordion-element>
+endsnippet
+
+snippet mjaccordiontitle "The title in a title/text pair."
+<mj-accordion-title>$1</mj-accordion-title>
+endsnippet
+
+snippet mjaccordiontext "The text in a title/text pair." 
+<mj-accordion-text>
+	<span style="$1">
+		$2
+	</span>
+</mj-accordion-text>
+endsnippet
+
+snippet mjbutton "Displays a customizable button." 
+<mj-button align="$2" border="$3" background-color="$4">$1</mj-button>
+endsnippet
+
+snippet mjcarousel "displays a gallery of images or \'carousel\'. Readers can interact by hovering and clicking on thumbnails depending on the email client they use." 
+<mj-carousel>
+	<mj-carousel-image src="$1" alt="$2" />
+</mj-carousel>
+endsnippet
+
+snippet mjcarouselimage "MJML Carousel Image"
+<mj-carousel-image src="$1" alt="$2" />
+endsnippet
+
+snippet mjsectioncolumn "MJML Section and Column pair"
+<mj-section>
+	<mj-column width="$2{px}">
+		$1
+	</mj-column>
+</mj-section>
+endsnippet
+
+snippet mjsection "Sections are intended to be used as rows within your email. They will be used to structure the layout."
+<mj-section>
+	$1
+</mj-section>
+endsnippet
+
+snippet mjcolumn "Columns enable you to horizontally organize the content within your sections. They must be located under mj-section tags in order to be considered by the engine. To be responsive, columns are expressed in terms of percentage."
+<mj-column width="$2">
+	$1
+</mj-column>
+endsnippet
+
+snippet mjdivider "Displays a horizontal divider that can be customized like a HTML border."
+<mj-divider border-width="$1" border-style="$2" border-color="$3" />
+endsnippet
+
+snippet mjgroup "mj-group allows you to prevent columns from stacking on mobile. To do so, wrap the columns inside a mj-group tag, so they\'ll stay side by side on mobile."
+<mj-group>
+	$1
+</mj-group>
+endsnippet
+
+snippet mjgroupcolumn "Grouping of Columns"
+<mj-group>
+	<mj-column>
+		$1
+	</mj-column>
+</mj-group>
+endsnippet
+
+snippet mjherofixed "This element displays a hero image. It behaves like an mj-section with a single mj-column."
+<mj-hero
+	mode="fixed-height"
+	background-height="$1"
+	background-width="$2"
+	background-url="$3"
+	>
+	$4
+</mj-hero>
+endsnippet
+
+snippet mjherofluid "MJ Hero Fluid"
+<mj-hero
+	mode="fluid-height"
+	background-height="$1"
+	background-width="$2"
+	background-url="$3"
+	>
+	$4
+</mj-hero>
+endsnippet
+
+snippet mjimage "Displays a responsive image in your email"
+<mj-image width="$1" src="$2" />
+endsnippet
+
+snippet mjnavbar "Displays a menu for navigation with an optional hamburger mode for mobile devices."
+<mj-navbar href="$1" hamburger="hamburger" ico-color="$2">
+	<mj-navbar-link href="$3">$4</mj-navbar-link>
+</mj-navbar>
+endsnippet
+
+snippet mjnavbarlink "mj-navbar-link component should be used to display an individual link in the navbar."
+<mj-navbar-link href="$1">$2</mj-navbar-link>
+endsnippet
+
+snippet mjraw "Displays raw HTML that is not going to be parsed by the MJML engine"
+<mj-raw></mj-raw>
+endsnippet
+
+snippet mjsocial "Displays calls-to-action for various social networks with their associated logo."
+<mj-social font-size="$1" icon-size="$2" mode="$3">
+	<mj-social-element name="$4" href="$5">
+		$6
+	</mj-social-element>
+</mj-social>
+endsnippet
+
+snippet mj-social-element "This component enables you to display a given social network inside mj-social."
+<mj-social-element name="$1" href="$2">
+	$3
+</mj-social-element>
+endsnippet
+
+snippet mjspacer "Displays a blank space"
+<mj-spacer height="$1" />
+endsnippet
+
+snippet mjtable "This tag allows you to display table and filled it with data"
+<mj-table>
+	<tr>
+		<th></th>
+	</tr>
+	<tr>
+		<td></td>
+	</tr>
+</mj-table>
+endsnippet
+
+snippet mj-text "This tag allows you to display text in your email."
+<mj-text>
+	$1
+</mj-text>
+endsnippet
+
+snippet mjwrapper "Wrapper enables to wrap multiple sections together"
+<mj-wrapper border="$1" padding="$2">
+	$3
+</mj-wrapper>
+endsnippet
+
+snippet mjwrapperfull "mj-wrapper with section and column"
+<mj-wrapper>
+	<mj-section>
+		<mj-column>
+			
+		</mj-column>
+	</mj-section>
+</mj-wrapper>
+endsnippet
